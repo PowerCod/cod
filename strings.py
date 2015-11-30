@@ -23,9 +23,11 @@ def cal_vowel(str):
 
 def palindrome(str):
     return str == rstr(str)
-       
+
+def words(str):
+    return  len(str.split())  
     
 if __name__ == '__main__':
-    s='banana'
-    print palindrome(s)
+    s='hello world, this is my test tools. haha, it\'s ok'
+    print words(s)
     
