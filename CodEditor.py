@@ -9,6 +9,9 @@ def donothing():
     button = Button(filewin, text="Do nothing button")
     button.pack()
     
+def show_help():
+    help_text = Text()
+    
 def create_menu(root):
     menubar = Menu(root)
 
@@ -33,18 +36,19 @@ def create_menu(root):
     menubar.add_cascade(label="编辑", menu=editmenu)
     
     helpmenu = Menu(menubar, tearoff=0)
-    helpmenu.add_command(label="关于", command=donothing)
+    helpmenu.add_command(label="关于", command=show_help)
     menubar.add_cascade(label="帮助", menu=helpmenu)
 
     return menubar
 
-top = Tk()
-top.geometry('600x400+100+100')
 
-
-
-top.config(menu=create_menu(top))
-
-
-
-top.mainloop()
+def main_window():
+    root = Tk()
+    root.wm_title("CodEditor demo")
+    root.geometry('600x400+100+100')
+    root.config(menu=create_menu(root))
+    root.mainloop()
+    
+    
+if __name__ == '__main__':
+    main_window()
