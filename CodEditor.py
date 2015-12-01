@@ -3,36 +3,36 @@
 
 from Tkinter import *
 
+WIDTH=600
+HEIGHT=400
+
 
 def donothing():
-    filewin = Toplevel(top)
+    pass
+    '''filewin = Toplevel(root)
     button = Button(filewin, text="Do nothing button")
-    button.pack()
+    button.pack()'''
     
 def show_help():
-    help_text = Text()
+    pass
     
 def create_menu(root):
     menubar = Menu(root)
 
     filemenu = Menu(menubar, tearoff=0)
-    filemenu.add_command(label="新建", command=donothing)
-    filemenu.add_command(label="打开", command=donothing)
-    filemenu.add_command(label="保存", command=donothing)
-    filemenu.add_command(label="另存为", command=donothing)
+    for item in ['新建','打开','保存','另存为']:
+        filemenu.add_command(label=item, command=donothing)
     filemenu.add_separator()
     filemenu.add_command(label="退出", command=donothing)
     menubar.add_cascade(label="文件", menu=filemenu)
     
     editmenu = Menu(menubar, tearoff=0)
-    editmenu.add_command(label="撤销")
-    editmenu.add_command(label="恢复")
+    for item in ['撤销','恢复']:
+        editmenu.add_command(label=item)
     
     editmenu.add_separator()
-    editmenu.add_command(label="剪切")
-    editmenu.add_command(label="复制")
-    editmenu.add_command(label="粘贴")
-    editmenu.add_command(label="删除")
+    for item in ['剪切','复制','粘贴','删除']:
+        editmenu.add_command(label=item)
     menubar.add_cascade(label="编辑", menu=editmenu)
     
     helpmenu = Menu(menubar, tearoff=0)
@@ -46,6 +46,9 @@ def main_window():
     root = Tk()
     root.wm_title("CodEditor demo")
     root.geometry('600x400+100+100')
+    
+    e=Entry(root, width=WIDTH)
+    e.pack()
     root.config(menu=create_menu(root))
     root.mainloop()
     
