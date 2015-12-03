@@ -20,6 +20,9 @@ def open_file():
     text_Window.delete('1.0', '99999999.0')
     text_Window.insert(END, content)
 
+def save_file():
+    pass
+
 def donothing():
     pass
     '''filewin = Toplevel(root)
