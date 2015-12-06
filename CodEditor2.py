@@ -29,6 +29,12 @@ class Frame(wx.Frame):
         menu_Edit.Append(wx.NewId(), "&Copy")
         menu_Edit.Append(wx.NewId(), "&Paste")
         menuBar.Append(menu_Edit, "&Edit")
+        
+        menu_Help = wx.Menu()
+        menu_Help.Append(wx.NewId(), "&About")
+        menuBar.Append(menu_Help, "Help")
+        
+        
         self.SetMenuBar(menuBar)
         
 
